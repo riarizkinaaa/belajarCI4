@@ -1,0 +1,9 @@
+.idea
+node_modules
+build
+materials
+.DS_Store
+._*
+npm-debug.log
+package-lock.json
+desktop.ini

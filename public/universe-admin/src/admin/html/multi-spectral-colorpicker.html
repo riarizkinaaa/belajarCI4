@@ -1,0 +1,178 @@
+{% extends "./common/layout.html" %}
+
+{% block title %}Multi Spectral Color Picker / Universe Admin{% endblock %}
+
+{% block styles %}
+<link id="colorpicker-style" rel="stylesheet" href="vendor/colorpicker/css/multi-spectral-picker/light.min.css">
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid container-fh l-2column">
+  {% set colorpickerType = 'multiSpectral' %}
+  {% include "./partials/colorpicker-menu.html" %}
+  <div class="m-content m-content__hb">
+    <div class="m-content__header">
+      <h4 class="m-content__heading">Customization</h4>
+      <div class="radio-group ml-3">
+        <label class="radio-group__item">
+          <input type="radio" name="radio-group" class="radio-group__input colorpicker-theme" checked value="vendor/colorpicker/css/multi-spectral-picker/light.min.css">
+          <span class="radio-group__text">Light Theme</span>
+        </label>
+        <label class="radio-group__item">
+          <input type="radio" name="radio-group" class="radio-group__input colorpicker-theme" value="vendor/colorpicker/css/multi-spectral-picker/dark.min.css">
+          <span class="radio-group__text">Dark Theme</span>
+        </label>
+      </div>
+    </div>
+    <div class="m-content__body">
+      <div class="m-content__block container-block">
+        <h2 class="mb-3">Multi Spectral Color Picker</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+              <label for="dc-ex1">Input</label>
+              <input id="dc-ex1" type="text" class="form-control">
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+              <label>Custom Anchor</label>
+              <div>
+                <div id="dc-ex2" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+                  <div class="colorpicker-circle-anchor__color" data-color></div>
+                </div>
+              </div>
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="dc-ex3">Anchor Inside Input (Right)</label>
+              <span class="colorpicker-input colorpicker-input--position-right">
+            <input id="dc-ex3" type="text" class="form-control">
+            <span id="dc-ex3-anchor" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+              <span class="colorpicker-circle-anchor__color" data-color></span>
+            </span>
+          </span>
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="dc-ex4">Anchor Inside Input (Left)</label>
+              <span class="colorpicker-input colorpicker-input--position-left">
+            <input id="dc-ex4" type="text" class="form-control">
+            <span id="dc-ex4-anchor" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+              <span class="colorpicker-circle-anchor__color" data-color></span>
+            </span>
+          </span>
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-content__block container-block">
+        <h2 class="mb-3">Inline Mode</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+              <label for="dc-ex5">Input</label>
+              <input id="dc-ex5" type="text" class="form-control">
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+              <label for="dc-ex6">Custom Anchor</label>
+              <div>
+                <div id="dc-ex6" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+                  <div class="colorpicker-circle-anchor__color" data-color></div>
+                </div>
+              </div>
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="dc-ex7">Anchor Inside Input (Right)</label>
+              <span class="colorpicker-input colorpicker-input--position-right">
+            <input id="dc-ex7" type="text" class="form-control">
+            <span id="dc-ex7-anchor" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+              <span class="colorpicker-circle-anchor__color" data-color></span>
+            </span>
+          </span>
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="dc-ex8">Anchor Inside Input (Left)</label>
+              <span class="colorpicker-input colorpicker-input--position-left">
+            <input id="dc-ex8" type="text" class="form-control">
+            <span id="dc-ex8-anchor" class="colorpicker-custom-anchor colorpicker-circle-anchor">
+              <span class="colorpicker-circle-anchor__color" data-color></span>
+            </span>
+          </span>
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-content__block container-block">
+        <h2 class="mb-3">Extra Options</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+              <label for="dc-ex9">Hidden Input (Anchor), only for inline mode</label>
+              <input id="dc-ex9" type="text" class="form-control">
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group form-group-colorpicker">
+              <label for="dc-ex10">Hidden Arrow</label>
+              <input id="dc-ex10" type="text" class="form-control">
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+            <div class="form-group form-group-colorpicker">
+              <label for="dc-ex10">Hidden History</label>
+              <input id="dc-ex12" type="text" class="form-control">
+              <small class="form-text text-muted">format: <code>rgba</code></small>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label>Dynamic Anchor Css Property</label>
+              <div id="dc-ex11" class="colorpicker-ex-block--text-example mb-2">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              </div>
+            </div>
+            <div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1" name="dc-ex11-anchor-css-property" class="custom-control-input" value="color" checked>
+                <label class="custom-control-label" for="customRadioInline1">Color</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline2" name="dc-ex11-anchor-css-property" class="custom-control-input" value="background-color">
+                <label class="custom-control-label" for="customRadioInline2">Background</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline3" name="dc-ex11-anchor-css-property" class="custom-control-input" value="border-color">
+                <label class="custom-control-label" for="customRadioInline3">Border Color</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="vendor/colorpicker/js/multi-spectral-picker.min.js"></script>
+<script src="js/preview/multispectral-colorpicker.min.js"></script>
+{% endblock %}
